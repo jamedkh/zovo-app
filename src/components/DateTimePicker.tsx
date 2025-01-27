@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
+  PopoverTrigger
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { add, format } from "date-fns";
@@ -12,7 +12,7 @@ import { type Locale, enUS } from "date-fns/locale";
 import {
   Calendar as CalendarIcon,
   ChevronLeft,
-  ChevronRight,
+  ChevronRight
 } from "lucide-react";
 import { Clock } from "lucide-react";
 import * as React from "react";
@@ -23,9 +23,9 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from "@/components/ui/select";
-import { DayPicker } from "react-day-picker";
+import { CaptionProps, DayPicker } from "react-day-picker";
 
 // ---------- utils start ----------
 /**
@@ -234,7 +234,7 @@ function genMonths(
 ) {
   return Array.from({ length: 12 }, (_, i) => ({
     value: i,
-    label: format(new Date(2021, i), "MMMM", { locale }),
+    label: format(new Date(2021, i), "MMMM", { locale })
   }));
 }
 
@@ -242,7 +242,7 @@ function genYears(yearRange = 50) {
   const today = new Date();
   return Array.from({ length: yearRange * 2 + 1 }, (_, i) => ({
     value: today.getFullYear() - yearRange + i,
-    label: (today.getFullYear() - yearRange + i).toString(),
+    label: (today.getFullYear() - yearRange + i).toString()
   }));
 }
 
@@ -262,11 +262,11 @@ function Calendar({
       locale = {
         options,
         localize,
-        formatLong,
+        formatLong
       };
     }
     return genMonths(locale);
-  }, []);
+  }, [props.locale]);
 
   const YEARS = React.useMemo(() => genYears(yearRange), []);
   const disableLeftNavigation = () => {
@@ -300,59 +300,48 @@ function Calendar({
         months:
           "flex flex-col sm:flex-row space-y-4  sm:space-y-0 justify-center",
         month: "flex flex-col items-center space-y-4",
-        month_caption: "flex justify-center pt-1 relative items-center",
+        caption: "flex justify-center pt-1 relative items-center",
         caption_label: "text-sm font-medium",
         nav: "space-x-1 flex items-center ",
-        button_previous: cn(
+        nav_button_previous: cn(
           buttonVariants({ variant: "outline" }),
           "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-5 top-5",
           disableLeftNavigation() && "pointer-events-none"
         ),
-        button_next: cn(
+        nav_button_next: cn(
           buttonVariants({ variant: "outline" }),
           "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute right-5 top-5",
           disableRightNavigation() && "pointer-events-none"
         ),
-        month_grid: "w-full border-collapse space-y-1",
-        weekdays: cn("flex", props.showWeekNumber && "justify-end"),
-        weekday:
+        table: "w-full border-collapse space-y-1",
+        head_row: cn("flex", props.showWeekNumber && "justify-end"),
+        head_cell:
           "text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]",
-        week: "flex w-full mt-2",
-        day: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20 rounded-1",
-        day_button: cn(
+        row: "flex w-full mt-2",
+        cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20 rounded-1",
+        day: cn(
           buttonVariants({ variant: "ghost" }),
           "h-9 w-9 p-0 font-normal aria-selected:opacity-100 rounded-l-md rounded-r-md"
         ),
-        range_end: "day-range-end",
-        selected:
-          "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground rounded-l-md rounded-r-md",
-        today: "bg-accent text-accent-foreground",
-        outside:
-          "day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
-        disabled: "text-muted-foreground opacity-50",
-        range_middle:
+        day_today: "bg-accent text-accent-foreground",
+        day_outside:
+          "text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
+        day_disabled: "text-muted-foreground opacity-50",
+        day_range_middle:
           "aria-selected:bg-accent aria-selected:text-accent-foreground",
-        hidden: "invisible",
-        ...classNames,
+        day_hidden: "invisible",
+        ...classNames
       }}
       components={{
-        Chevron: ({ ...props }) =>
-          props.orientation === "left" ? (
-            <ChevronLeft className="h-4 w-4" />
-          ) : (
-            <ChevronRight className="h-4 w-4" />
-          ),
-        MonthCaption: ({
-          calendarMonth,
-        }: {
-          calendarMonth: { date: Date };
-        }) => {
+        IconLeft: () => <ChevronLeft className="h-4 w-4" />,
+        IconRight: () => <ChevronRight className="h-4 w-4" />,
+        Caption: ({ displayMonth }: CaptionProps) => {
           return (
             <div className="inline-flex gap-2">
               <Select
-                defaultValue={calendarMonth.date.getMonth().toString()}
+                defaultValue={displayMonth.getMonth().toString()}
                 onValueChange={(value) => {
-                  const newDate = new Date(calendarMonth.date);
+                  const newDate = new Date(displayMonth);
                   newDate.setMonth(Number.parseInt(value, 10));
                   props.onMonthChange?.(newDate);
                 }}
@@ -372,9 +361,9 @@ function Calendar({
                 </SelectContent>
               </Select>
               <Select
-                defaultValue={calendarMonth.date.getFullYear().toString()}
+                defaultValue={displayMonth.getFullYear().toString()}
                 onValueChange={(value) => {
-                  const newDate = new Date(calendarMonth.date);
+                  const newDate = new Date(displayMonth);
                   newDate.setFullYear(Number.parseInt(value, 10));
                   props.onMonthChange?.(newDate);
                 }}
@@ -392,7 +381,7 @@ function Calendar({
               </Select>
             </div>
           );
-        },
+        }
       }}
       {...props}
     />
@@ -619,7 +608,7 @@ const TimePicker = React.forwardRef<TimePickerRef, TimePickerProps>(
         minuteRef: minuteRef.current,
         hourRef: hourRef.current,
         secondRef: secondRef.current,
-        periodRef: periodRef.current,
+        periodRef: periodRef.current
       }),
       [minuteRef, hourRef, secondRef]
     );
@@ -775,7 +764,7 @@ const DateTimePicker = React.forwardRef<
       const diff = newDay.getTime() - defaultPopupValue.getTime();
       const diffInDays = diff / (1000 * 60 * 60 * 24);
       const newDateFull = add(defaultPopupValue, {
-        days: Math.ceil(diffInDays),
+        days: Math.ceil(diffInDays)
       });
       newDateFull.setHours(
         month?.getHours() ?? 0,
@@ -799,7 +788,7 @@ const DateTimePicker = React.forwardRef<
       ref,
       () => ({
         ...buttonRef.current,
-        value: displayDate,
+        value: displayDate
       }),
       [displayDate]
     );
@@ -810,7 +799,7 @@ const DateTimePicker = React.forwardRef<
         `PPP HH:mm${!granularity || granularity === "second" ? ":ss" : ""}`,
       hour12:
         displayFormat?.hour12 ??
-        `PP hh:mm${!granularity || granularity === "second" ? ":ss" : ""} b`,
+        `PP hh:mm${!granularity || granularity === "second" ? ":ss" : ""} b`
     };
 
     let loc = enUS;
@@ -820,7 +809,7 @@ const DateTimePicker = React.forwardRef<
         ...enUS,
         options,
         localize,
-        formatLong,
+        formatLong
       };
     }
 
@@ -844,7 +833,7 @@ const DateTimePicker = React.forwardRef<
                   ? initHourFormat.hour24
                   : initHourFormat.hour12,
                 {
-                  locale: loc,
+                  locale: loc
                 }
               )
             ) : (
