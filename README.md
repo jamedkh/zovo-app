@@ -69,4 +69,4 @@ http://localhost:3000
 
 - [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Shadcn](https://shadcn.github.io/ui/)
+- [Shadcn](https://ui.shadcn.com/)
