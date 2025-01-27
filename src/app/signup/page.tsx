@@ -1,7 +1,5 @@
 import { GalleryVerticalEnd } from "lucide-react";
 import Image from "next/image";
-
-import { LoginForm } from "@/components/login-form";
 import { BgImg } from "../../../public/images";
 import { SignupForm } from "@/components/signup-form";
 

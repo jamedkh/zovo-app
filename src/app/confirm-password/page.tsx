@@ -2,7 +2,6 @@ import { GalleryVerticalEnd } from "lucide-react";
 import Image from "next/image";
 
 import { BgImg } from "../../../public/images";
-import { ResetPasswordForm } from "@/components/reset-password-form";
 import { ConfirmPasswordForm } from "@/components/confirm-password-form";
 
 export default function ConfimPasswordPage() {

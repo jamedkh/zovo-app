@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import React from "react";
 import InfluencerDrawer from "./InfluencerDrawer";
-import { Separator } from "@/components/ui/separator";
+// import { Separator } from "@/components/ui/separator";
 import { InDataTable } from "./InDataTable";
 import { Influencer, inColumns } from "./inColumns";
 import InfluencerData from "./InfluencerData.json";

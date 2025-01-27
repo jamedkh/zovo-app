@@ -2,12 +2,10 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useFieldArray } from "react-hook-form";
-import { format } from "date-fns";
-import { CalendarIcon, Plus, Trash2, X } from "lucide-react";
+import { Plus, Trash2, X } from "lucide-react";
 import * as z from "zod";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
 import {
   Form,
   FormControl,
@@ -19,11 +17,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger
-} from "@/components/ui/popover";
-import {
   Select,
   SelectContent,
   SelectItem,
@@ -31,7 +24,6 @@ import {
   SelectValue
 } from "@/components/ui/select";
 import { formSchema } from "@/lib/schemas/form";
-import { cn } from "@/lib/utils";
 import { useState } from "react";
 import {
   Sheet,

@@ -1,14 +1,6 @@
 "use client";
-import Link from "next/link";
+
 import { ContentLayout } from "@/components/admin-panel/content-layout";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator
-} from "@/components/ui/breadcrumb";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import {
@@ -19,7 +11,6 @@ import {
 } from "@/components/ui/tooltip";
 import { useSidebar } from "@/hooks/use-sidebar";
 import { useStore } from "@/hooks/use-store";
-import { Button } from "@/components/ui/button";
 import DashboardSingleCard from "@/components/dashboard-single-card";
 import { Activity, CreditCard, DollarSign, Users } from "lucide-react";
 import { DashboardBarChart } from "@/components/dashboard-bar-chart";
