@@ -41,12 +41,12 @@ export function InGrid({
   onSelectCard
 }: InGridProps) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-4 ">
       {data.map((influencer) => (
         <div
           key={influencer.id}
           className={cn(
-            "bg-card border rounded-lg p-6 hover:bg-accent/50 transition-colors relative ",
+            "bg-card border rounded-md p-6 hover:bg-accent/50 transition-colors relative ",
             selectedCards.includes(influencer.id) && "border-blue-500"
           )}
         >
@@ -130,6 +130,7 @@ export function InGrid({
 
       {/*
        Load More Button 
+       */}
       {hasMore && (
         <div className="col-span-full flex justify-center mt-6">
           <Button onClick={loadMore} variant="outline">
@@ -137,7 +138,6 @@ export function InGrid({
           </Button>
         </div>
       )}
-      */}
     </div>
   );
 }

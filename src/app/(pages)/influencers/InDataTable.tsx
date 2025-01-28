@@ -39,6 +39,11 @@ export function InDataTable<TData, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    initialState: {
+      pagination: {
+        pageSize: 10
+      }
+    },
     state: {
       sorting
     }

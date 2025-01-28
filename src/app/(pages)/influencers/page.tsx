@@ -106,21 +106,10 @@ export default function Influencers() {
           hasMore={hasMore}
           selectedCards={selectedCards}
           onSelectCard={handleSelectCard}
-          loadMore={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          loadMore={loadMore}
         />
       ) : (
-        <InDataTable columns={inColumns} data={visibleData} />
-      )}
-
-      {/* Load More for List View */}
-      {view === "grid" && hasMore && (
-        <div className="flex justify-center mt-6">
-          <Button onClick={loadMore} variant="outline">
-            Load More
-          </Button>
-        </div>
+        <InDataTable columns={inColumns} data={data} />
       )}
     </ContentLayout>
   );
