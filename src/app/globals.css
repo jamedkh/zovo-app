@@ -260,11 +260,21 @@
 }
 
 .react-datepicker__day--selected {
-  @apply dark:bg-background dark:!text-white bg-black;
+  @apply dark:bg-background dark:!text-white bg-black hover:!bg-primary-hex hover:!text-black;
+}
+
+.react-datepicker__day--selected:focus,
+.react-datepicker__day--selected:hover {
+  @apply !bg-primary-hex !text-black;
 }
 
 .react-datepicker__day--keyboard-selected {
-  @apply bg-accent text-foreground;
+  @apply dark:bg-background dark:!text-white bg-black text-white;
+}
+
+.react-datepicker__day--keyboard-selected:focus,
+.react-datepicker__day--keyboard-selected:hover {
+  @apply bg-primary-hex text-black;
 }
 
 .react-datepicker-popper {

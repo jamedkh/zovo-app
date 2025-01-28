@@ -58,9 +58,7 @@ export function FeaturedProducts() {
   return (
     <div className="mb-6 md:mb-8">
       <div className="flex justify-between items-center mb-3 md:mb-4">
-        <h2 className="text-lg md:text-xl font-semibold text-white">
-          Featured Products
-        </h2>
+        <h2 className="text-lg md:text-xl font-semibold ">Featured Products</h2>
         <div className="flex gap-2">
           <Button
             variant="outline"

@@ -22,24 +22,22 @@ interface ProfileProps {
 
 export function Profile({ influencer }: ProfileProps) {
   return (
-    <div className="w-full md:w-80 p-4 md:p-6 bg-zinc-900 md:min-h-screen">
+    <div className="w-full md:w-80 p-4 md:p-6 bg-white dark:bg-zinc-900 md:min-h-screen rounded-lg">
       <div className="flex flex-col items-center text-center mb-6">
         <div className="relative mb-3">
           <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-vrrfODqRhzYNzdd55S7x50gANiCTDA.png"
+            src="https://avatar.iran.liara.run/public"
             alt="Profile picture"
             className="w-24 h-24 rounded-full object-cover"
           />
-          <Badge className="absolute bottom-0 right-0 bg-yellow-400 text-black">
+          <Badge className="absolute bottom-0 right-0 bg-primary-hex text-black">
             <Star className="h-3 w-3 fill-current" />
           </Badge>
         </div>
-        <h2 className="text-xl font-semibold text-white mb-1">
-          {influencer.name}
-        </h2>
+        <h2 className="text-xl font-semibold mb-1">{influencer.name}</h2>
         <p className="text-sm text-zinc-400 mb-3">5.2k followers</p>
         <div className="flex gap-2 w-full mb-4 md:mb-6">
-          <Button className="flex-1 bg-yellow-400 text-black hover:bg-yellow-500 text-sm md:text-base">
+          <Button className="flex-1 bg-primary-hex text-black hover:bg-[hsl(67,100%,70%)] text-sm md:text-base">
             Follow
           </Button>
           <Button variant="outline" className="flex-1 text-sm md:text-base">
@@ -59,7 +57,7 @@ export function Profile({ influencer }: ProfileProps) {
       </div>
 
       <div className="mb-6">
-        <h3 className="text-sm font-semibold text-white mb-2">About</h3>
+        <h3 className="text-sm font-semibold dark:text-white mb-2">About</h3>
         <p className="text-sm text-zinc-400">
           Experienced IT professional with a passion for cybersecurity and
           network optimization.
@@ -67,7 +65,9 @@ export function Profile({ influencer }: ProfileProps) {
       </div>
 
       <div className="mb-6">
-        <h3 className="text-sm font-semibold text-white mb-3">Seller Stats</h3>
+        <h3 className="text-sm font-semibold dark:text-white mb-3">
+          Seller Stats
+        </h3>
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Badge variant="outline">150</Badge>
@@ -81,11 +81,17 @@ export function Profile({ influencer }: ProfileProps) {
       </div>
 
       <div>
-        <h3 className="text-sm font-semibold text-white mb-3">Favorite Tags</h3>
+        <h3 className="text-sm font-semibold dark:text-white mb-3">
+          Favorite Tags
+        </h3>
         <div className="flex flex-wrap gap-2">
           {["cybersecurity", "networking", "cloud", "devops", "ai"].map(
             (tag) => (
-              <Badge key={tag} variant="secondary" className="bg-zinc-800">
+              <Badge
+                key={tag}
+                variant="secondary"
+                className="bg-zinc-800 text-white"
+              >
                 {tag}
               </Badge>
             )

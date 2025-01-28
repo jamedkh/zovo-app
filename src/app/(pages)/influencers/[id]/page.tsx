@@ -36,7 +36,7 @@ export default function InfluencerDetail({
 
   return (
     <ContentLayout title="Influencers">
-      <div className="flex flex-col md:flex-row min-h-screen bg-black">
+      <div className="flex flex-col md:flex-row min-h-screen ">
         <Profile influencer={influencer} />
         <main className="flex-1 p-4 md:p-6">
           <FeaturedProducts />
