@@ -52,7 +52,7 @@ export function InDataTable<TData, TValue>({
   return (
     <>
       {/* table */}
-      <div className="rounded-md border mt-5 dark:border-gray-700 dark:bg-background p-2">
+      <div className="rounded-md border mt-5 dark:bg-background/40 p-2 bg-white">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

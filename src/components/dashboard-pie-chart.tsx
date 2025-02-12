@@ -54,7 +54,7 @@ const chartConfig = {
 
 export function DashboardPieChart() {
   return (
-    <Card className="flex flex-col h-full bg-background/40 shadow-none">
+    <Card className="flex flex-col h-full dark:bg-background/40 shadow-none">
       <CardHeader className="items-center pb-0">
         <CardTitle>Pie Chart - Donut Active</CardTitle>
         <CardDescription>January - June 2024</CardDescription>

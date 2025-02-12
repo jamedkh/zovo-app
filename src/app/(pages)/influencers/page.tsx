@@ -12,13 +12,15 @@ import {
 import React, { useState } from "react";
 import InfluencerDrawer from "./InfluencerDrawer";
 // import { Separator } from "@/components/ui/separator";
-import { InDataTable } from "./InDataTable";
+import { InDataTable } from "@/components/InDataTable";
 import { Influencer, inColumns } from "./inColumns";
 import InfluencerData from "./InfluencerData.json";
 import { Toggle } from "@/components/ui/toggle";
-import { LayoutGrid, List } from "lucide-react";
+import { Filter, LayoutGrid, List } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { InGrid } from "./inGrid";
+import { InfluencerTopCharts } from "@/components/InfluencerTopCharts";
+import InfluencerFilters from "./InfluencerFilters";
 
 export default function Influencers() {
   const [view, setView] = useState<"grid" | "list">("list");
@@ -79,6 +81,8 @@ export default function Influencers() {
       {/* View Toggle */}
       <div className="flex justify-end items-center mb-4">
         <div className="flex items-center gap-2 mr-2">
+          <InfluencerFilters />
+
           <Toggle
             pressed={view === "list"}
             onPressedChange={(pressed) => setView(pressed ? "list" : "grid")}
@@ -97,6 +101,10 @@ export default function Influencers() {
         </div>
 
         <InfluencerDrawer />
+      </div>
+
+      <div className="mb-4">
+        <InfluencerTopCharts />
       </div>
 
       {/* Content */}

@@ -54,7 +54,7 @@ const chartConfig = {
 
 export function DashboardHorizontalBarChart() {
   return (
-    <Card className="h-full bg-background/40 shadow-none">
+    <Card className="h-full dark:bg-background/40 shadow-none">
       <CardHeader>
         <CardTitle>Bar Chart - Mixed</CardTitle>
         <CardDescription>January - June 2024</CardDescription>

@@ -6,7 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function DashboardRecent() {
   return (
-    <Card className="bg-background/40 shadow-none">
+    <Card className="dark:bg-background/40 shadow-none">
       <CardHeader>
         <CardTitle>Recent Sales</CardTitle>
       </CardHeader>

@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
-import { Influencer } from "./inColumns";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
@@ -25,75 +24,60 @@ import { TiktokLogo } from "@phosphor-icons/react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
-interface InGridProps {
-  data: Influencer[];
+export interface Campaign {
+  id: number;
+  name: string;
+  date: string;
+  tags: string[];
+  img: string;
+}
+
+interface CampaignGridProps {
+  data: Campaign[];
   loadMore: () => void;
   hasMore: boolean;
   selectedCards: number[];
   onSelectCard: (id: number) => void;
 }
 
-export function InGrid({
+export function CampaignGrid({
   data,
   loadMore,
   hasMore,
   selectedCards,
   onSelectCard
-}: InGridProps) {
+}: CampaignGridProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-4 ">
-      {data.map((influencer) => (
+      {data.map((campaign) => (
         <div
-          key={influencer.id}
+          key={campaign.id}
           className={cn(
             "dark:bg-card/40 border rounded-[10px] p-6 hover:bg-accent/5 dark:hover:bg-card/60 transition-colors relative bg-white",
-            selectedCards.includes(influencer.id) && "border-blue-500"
+            selectedCards.includes(campaign.id) && "border-blue-500"
           )}
         >
           {/* Checkbox */}
           <div className="absolute top-2 left-2">
             <Checkbox
-              checked={selectedCards.includes(influencer.id)}
-              onCheckedChange={() => onSelectCard(influencer.id)}
+              checked={selectedCards.includes(campaign.id)}
+              onCheckedChange={() => onSelectCard(campaign.id)}
               className="h-5 w-5 rounded-md"
             />
           </div>
 
           {/* Avatar and Name */}
-          <Link href={`/influencers/${influencer.id}`} className="group">
+          <Link href={`/campaigns/${campaign.id}`} className="group">
             <div className="flex flex-col items-center gap-3">
-              <Avatar className="h-20 w-20">
-                <AvatarImage src={influencer.img} />
-                <AvatarFallback>{influencer.name[0]}</AvatarFallback>
-              </Avatar>
               <h3 className="text-lg font-semibold group-hover:text-primary">
-                {influencer.name}
+                {campaign.name}
               </h3>
-              <p className="text-sm text-muted-foreground">{influencer.city}</p>
+              <p className="text-sm text-muted-foreground">{campaign.date}</p>
               <Badge variant="secondary" className="mt-2">
-                {influencer.category}
+                {campaign.tags.join(", ")}
               </Badge>
             </div>
           </Link>
-
-          {/* Stats */}
-          <div className="mt-4 text-center flex justify-center gap-4">
-            <div className="flex flex-col text-sm">
-              <span className="font-semibold">1.2k</span>
-              <span>Posts</span>
-            </div>
-            <div className="flex flex-col text-sm">
-              <span className="font-semibold">5.2k</span>
-              <span>Followers</span>
-            </div>
-          </div>
-
-          {/* Social Handles */}
-          <div className="mt-4 py-4 flex justify-between gap-3 border-y ">
-            <Facebook />
-            <Instagram />
-            <TiktokLogo className="h-7 w-7 text-black dark:text-white" />
-          </div>
 
           {/* Actions Dropdown */}
           <div className="absolute top-2 right-2">

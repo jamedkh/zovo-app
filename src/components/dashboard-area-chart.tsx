@@ -42,7 +42,7 @@ const chartConfig = {
 
 export function DashboardAreaChart() {
   return (
-    <Card className="h-full bg-background/40 shadow-none">
+    <Card className="h-full dark:bg-background/40 shadow-none">
       <CardHeader>
         <CardTitle>Area Chart - Legend</CardTitle>
         <CardDescription>

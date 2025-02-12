@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Summer Fashion Collection",
+    "date": "2025-06-15",
+    "tags": ["In Progress", "Internal"],
+    "img": "https://hub.dummyapis.com/Image?text=SF&height=120&width=120"
+  },
+  {
+    "id": 2,
+    "name": "Fitness Challenge 2025",
+    "date": "2025-07-01",
+    "tags": ["Upcoming", "External"],
+    "img": "https://hub.dummyapis.com/Image?text=FC&height=120&width=120"
+  },
+  {
+    "id": 3,
+    "name": "Back to School Drive",
+    "date": "2025-08-20",
+    "tags": ["Planning", "Internal"],
+    "img": "https://hub.dummyapis.com/Image?text=BS&height=120&width=120"
+  },
+  {
+    "id": 4,
+    "name": "Holiday Special",
+    "date": "2025-12-01",
+    "tags": ["Scheduled", "External"],
+    "img": "https://hub.dummyapis.com/Image?text=HS&height=120&width=120"
+  },
+  {
+    "id": 5,
+    "name": "Tech Launch Event",
+    "date": "2025-09-15",
+    "tags": ["In Progress", "External"],
+    "img": "https://hub.dummyapis.com/Image?text=TL&height=120&width=120"
+  },
+  {
+    "id": 6,
+    "name": "Wellness Week",
+    "date": "2025-10-01",
+    "tags": ["Planning", "Internal"],
+    "img": "https://hub.dummyapis.com/Image?text=WW&height=120&width=120"
+  },
+  {
+    "id": 7,
+    "name": "Sports Tournament",
+    "date": "2025-08-10",
+    "tags": ["In Progress", "External"],
+    "img": "https://hub.dummyapis.com/Image?text=ST&height=120&width=120"
+  },
+  {
+    "id": 8,
+    "name": "Spring Collection Preview",
+    "date": "2026-03-01",
+    "tags": ["Upcoming", "Internal"],
+    "img": "https://hub.dummyapis.com/Image?text=SP&height=120&width=120"
+  }
+]

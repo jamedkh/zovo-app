@@ -11,7 +11,7 @@ import {
 
 import { ColumnDef } from "@tanstack/react-table";
 import { Copy, EllipsisVertical, Eye, Pencil, Trash2 } from "lucide-react";
-import { DataTableColumnHeader } from "./DataTableColumnHeader";
+import { DataTableColumnHeader } from "@/components/DataTableColumnHeader";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
