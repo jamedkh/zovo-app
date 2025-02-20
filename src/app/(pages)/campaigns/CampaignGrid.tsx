@@ -1,7 +1,7 @@
 "use client";
-import { format } from "date-fns";
+
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -21,7 +21,6 @@ import {
   Pencil,
   Trash2
 } from "lucide-react";
-import { TiktokLogo } from "@phosphor-icons/react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import {
@@ -293,7 +292,7 @@ export function CampaignGrid({
           <div className="hidden max-sm:flex w-full justify-between py-2 flex-wrap items-center border-t">
             <Button
               variant="ghost"
-              className="flex flex-col rounded-xs h-auto text-xs hidden"
+              className=" flex-col rounded-xs h-auto text-xs hidden"
             >
               <Copy />
               Copy ID
@@ -317,7 +316,7 @@ export function CampaignGrid({
             <Separator orientation="vertical" className="h-8" />
             <Button
               variant="ghost"
-              className="flex flex-col rounded-xs h-auto text-xs hidden"
+              className=" flex-col rounded-xs h-auto text-xs hidden"
             >
               <Copy />
               Duplicate

@@ -1,18 +1,7 @@
 import React, { useState } from "react";
 import CampaignData from "./CampaignData.json";
 import { Button } from "@/components/ui/button";
-import {
-  List,
-  Grid,
-  CalendarRange,
-  Calendar,
-  MoreVertical,
-  Copy,
-  Eye,
-  Edit,
-  Trash2
-} from "lucide-react";
-// import { Campaign } from "./CampaignGrid";
+import { Calendar, MoreVertical, Copy, Eye, Edit, Trash2 } from "lucide-react";
 import Link from "next/link";
 import {
   DropdownMenu,
@@ -187,7 +176,7 @@ export function CampaignList({ data }: CampaignListProps) {
             <div className="hidden max-sm:flex w-full justify-between pt-2 flex-wrap items-center border-t">
               <Button
                 variant="ghost"
-                className="flex flex-col rounded-xs h-auto text-xs hidden"
+                className=" flex-col rounded-xs h-auto text-xs hidden"
               >
                 <Copy />
                 Copy ID
@@ -211,7 +200,7 @@ export function CampaignList({ data }: CampaignListProps) {
               <Separator orientation="vertical" className="h-8" />
               <Button
                 variant="ghost"
-                className="flex flex-col rounded-xs h-auto text-xs hidden"
+                className=" flex-col rounded-xs h-auto text-xs hidden"
               >
                 <Copy />
                 Duplicate
