@@ -6,16 +6,16 @@ export function CampaignStatistics() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {/* Total Earning */}
-      <DashboardSingleCard title="Total Earning" highlight="$140 USD" />
+      <DashboardSingleCard title="Total Budget" highlight="$140 USD" />
 
       {/* Days */}
-      <DashboardSingleCard title="Days" highlight="60" />
+      <DashboardSingleCard title="Region" highlight="South" />
 
       {/* Weekly */}
-      <DashboardSingleCard title="Weekly" highlight="$120 USD" />
+      <DashboardSingleCard title="Language" highlight="Urdu" />
 
       {/* Monthly */}
-      <DashboardSingleCard title="Monthly" highlight="$500 USD" />
+      <DashboardSingleCard title="Age Bracket" highlight="20-40" />
     </div>
   );
 }

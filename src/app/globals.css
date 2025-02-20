@@ -200,7 +200,7 @@
 }
 
 .react-datepicker {
-  @apply border border-border rounded-lg shadow-lg font-sans;
+  @apply border border-border rounded-[12px] shadow-lg font-sans;
 }
 
 .react-datepicker-wrapper {
@@ -211,7 +211,7 @@
   @apply dark:!fill-dashboard-background dark:!text-dashboard-background dark:!stroke-none;
 }
 .react-datepicker__header {
-  @apply dark:bg-dashboard-background border-b border-border dark:text-white !rounded-t-lg;
+  @apply dark:bg-dashboard-background border-b border-border dark:text-white !rounded-t-[9px];
 }
 
 .react-datepicker__header__dropdown {
@@ -259,22 +259,27 @@
   @apply dark:text-background hover:bg-accent;
 }
 
-.react-datepicker__day--selected {
-  @apply dark:bg-background dark:!text-white bg-black hover:!bg-primary-hex hover:!text-black;
+.react-datepicker__day--disabled {
+  @apply rounded-[4px] dark:text-[#939393] dark:hover:bg-slate-100;
 }
 
+.react-datepicker__day--selected {
+  @apply dark:bg-background dark:!text-white bg-black hover:!bg-black;
+}
+
+/* 
 .react-datepicker__day--selected:focus,
 .react-datepicker__day--selected:hover {
   @apply !bg-primary-hex !text-black;
 }
-
+ */
 .react-datepicker__day--keyboard-selected {
   @apply dark:bg-background dark:!text-white bg-black text-white;
 }
 
 .react-datepicker__day--keyboard-selected:focus,
 .react-datepicker__day--keyboard-selected:hover {
-  @apply bg-primary-hex text-black;
+  @apply bg-primary-hex !text-black;
 }
 
 .react-datepicker-popper {

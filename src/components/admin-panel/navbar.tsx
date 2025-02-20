@@ -25,7 +25,7 @@ export function Navbar({ title }: NavbarProps) {
   const { isOpen, toggleOpen } = sidebar;
   return (
     <header
-      className="sticky top-0 z-10 w-full bg-muted/50 backdrop-blur rounded-t-2xl dark:bg-dashboard-background"
+      className="sticky top-0 z-10 w-full backdrop-blur "
       style={{ backdropFilter: "blur(20px)" }}
     >
       <div className="mx-4 sm:mx-8 flex h-14 items-center">

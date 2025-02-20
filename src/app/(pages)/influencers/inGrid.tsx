@@ -104,7 +104,7 @@ export function InGrid({
                   <MoreVertical className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="p-2">
+              <DropdownMenuContent align="end" className="p-2 rounded-xs">
                 <DropdownMenuItem>
                   <Eye className="h-4 w-4 mr-2" />
                   View

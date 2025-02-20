@@ -2,57 +2,217 @@
   {
     "id": 1,
     "name": "Summer Fashion Collection",
-    "date": "2025-06-15",
+    "startDate": "2025-06-15",
+    "endDate": "2025-06-15",
+    "category": "Projects",
+    "status": "onhold",
     "tags": ["In Progress", "Internal"],
-    "img": "https://hub.dummyapis.com/Image?text=SF&height=120&width=120"
+    "img": "https://hub.dummyapis.com/Image?text=SF&height=120&width=120",
+    "team": [
+      {
+        "name": "Alice Brown",
+        "initials": "AB",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=AB&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Bob Smith",
+        "initials": "BS",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=BS&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Charlie Davis",
+        "initials": "CD",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=CD&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      }
+    ]
   },
   {
     "id": 2,
     "name": "Fitness Challenge 2025",
-    "date": "2025-07-01",
+    "startDate": "2025-07-01",
+    "endDate": "2025-07-01",
+    "category": "Internal",
+    "status": "inprogress",
     "tags": ["Upcoming", "External"],
-    "img": "https://hub.dummyapis.com/Image?text=FC&height=120&width=120"
+    "img": "https://hub.dummyapis.com/Image?text=FC&height=120&width=120",
+    "team": [
+      {
+        "name": "Diana Evans",
+        "initials": "DE",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=DE&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Ethan Ford",
+        "initials": "EF",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=EF&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Fiona Green",
+        "initials": "FG",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=FG&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      }
+    ]
   },
   {
     "id": 3,
     "name": "Back to School Drive",
-    "date": "2025-08-20",
+    "startDate": "2025-08-20",
+    "endDate": "2025-08-20",
+    "category": "Reminder",
+    "status": "pending",
     "tags": ["Planning", "Internal"],
-    "img": "https://hub.dummyapis.com/Image?text=BS&height=120&width=120"
+    "img": "https://hub.dummyapis.com/Image?text=BS&height=120&width=120",
+    "team": [
+      {
+        "name": "George Hall",
+        "initials": "GH",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=GH&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Hannah Irving",
+        "initials": "HI",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=HI&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Ian Jones",
+        "initials": "IJ",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=IJ&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      }
+    ]
   },
   {
     "id": 4,
     "name": "Holiday Special",
-    "date": "2025-12-01",
+    "startDate": "2025-12-01",
+    "endDate": "2025-12-01",
+    "category": "Internal",
+    "status": "completed",
     "tags": ["Scheduled", "External"],
-    "img": "https://hub.dummyapis.com/Image?text=HS&height=120&width=120"
+    "img": "https://hub.dummyapis.com/Image?text=HS&height=120&width=120",
+    "team": [
+      {
+        "name": "Jane Kelly",
+        "initials": "JK",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=JK&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Kevin Lee",
+        "initials": "KL",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=KL&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Laura Martinez",
+        "initials": "LM",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=LM&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      }
+    ]
   },
   {
     "id": 5,
     "name": "Tech Launch Event",
-    "date": "2025-09-15",
+    "startDate": "2025-09-15",
+    "endDate": "2025-09-15",
+    "category": "Reminder",
+    "status": "inprogress",
     "tags": ["In Progress", "External"],
-    "img": "https://hub.dummyapis.com/Image?text=TL&height=120&width=120"
+    "img": "https://hub.dummyapis.com/Image?text=TL&height=120&width=120",
+    "team": [
+      {
+        "name": "Michael Nolan",
+        "initials": "MN",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=MN&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Nancy Owens",
+        "initials": "NO",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=NO&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Oliver Perez",
+        "initials": "OP",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=OP&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      }
+    ]
   },
   {
     "id": 6,
     "name": "Wellness Week",
-    "date": "2025-10-01",
+    "startDate": "2025-10-01",
+    "endDate": "2025-10-01",
+    "category": "Internal",
+    "status": "onhold",
     "tags": ["Planning", "Internal"],
-    "img": "https://hub.dummyapis.com/Image?text=WW&height=120&width=120"
+    "img": "https://hub.dummyapis.com/Image?text=WW&height=120&width=120",
+    "team": [
+      {
+        "name": "Paula Quinn",
+        "initials": "PQ",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=PQ&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Quincy Roberts",
+        "initials": "QR",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=QR&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Rachel Stevens",
+        "initials": "RS",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=RS&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      }
+    ]
   },
   {
     "id": 7,
     "name": "Sports Tournament",
-    "date": "2025-08-10",
+    "startDate": "2025-08-10",
+    "endDate": "2025-08-10",
+    "category": "Projects",
+    "status": "completed",
     "tags": ["In Progress", "External"],
-    "img": "https://hub.dummyapis.com/Image?text=ST&height=120&width=120"
+    "img": "https://hub.dummyapis.com/Image?text=ST&height=120&width=120",
+    "team": [
+      {
+        "name": "Samuel Turner",
+        "initials": "ST",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=ST&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Tina Underwood",
+        "initials": "TU",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=TU&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Ursula Vance",
+        "initials": "UV",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=UV&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      }
+    ]
   },
   {
     "id": 8,
     "name": "Spring Collection Preview",
-    "date": "2026-03-01",
+    "startDate": "2026-03-01",
+    "endDate": "2026-03-01",
+    "category": "Reminder",
+    "status": "pending",
     "tags": ["Upcoming", "Internal"],
-    "img": "https://hub.dummyapis.com/Image?text=SP&height=120&width=120"
+    "img": "https://hub.dummyapis.com/Image?text=SP&height=120&width=120",
+    "team": [
+      {
+        "name": "Victor White",
+        "initials": "VW",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=VW&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Wendy Xander",
+        "initials": "WX",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=WX&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      },
+      {
+        "name": "Xavier Young",
+        "initials": "XY",
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=XY&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&backgroundRotation[]"
+      }
+    ]
   }
 ]

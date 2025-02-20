@@ -27,7 +27,8 @@ interface Campaign {
   id: number;
   name: string;
   status: string;
-  date: string;
+  startDate: string;
+  endDate: string;
   tags: string[];
   img: string;
 }
@@ -75,7 +76,7 @@ export default function CampaignDetail() {
               <div className="flex items-center gap-2">
                 <Button variant="outline" size="sm">
                   <Calendar className="w-4 h-4 mr-2" />
-                  Dec 1 - Dec 31, 2021
+                  Dec 1 - Dec 31, 2024
                 </Button>
               </div>
             </div>
