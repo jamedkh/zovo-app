@@ -32,10 +32,12 @@ export function Navbar({ title }: NavbarProps) {
         <div className="flex items-center space-x-4 lg:space-x-0">
           <SheetMenu />
           <SidebarToggle isOpen={isOpen} setIsOpen={toggleOpen} />
-          <Breadcrumb>
+          <Breadcrumb className="max-sm:!ml-0">
             <BreadcrumbList>
               <BreadcrumbItem>
-                <BreadcrumbPage>{title}</BreadcrumbPage>
+                <BreadcrumbPage className="max-sm:overflow-hidden max-sm:text-nowrap text-ellipsis max-sm:w-4/5">
+                  {title}
+                </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>

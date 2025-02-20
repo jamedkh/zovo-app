@@ -19,7 +19,7 @@ import {
 
 export default function CampaignOrder() {
   return (
-    <Card>
+    <Card className="dark:bg-background/40 shadow-none">
       <CardHeader className="px-7">
         <CardTitle>Orders</CardTitle>
         <CardDescription>Recent orders from your store.</CardDescription>

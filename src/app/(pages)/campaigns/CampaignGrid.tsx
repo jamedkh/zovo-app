@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {
   Copy,
+  Edit,
   Eye,
   Facebook,
   Instagram,
@@ -49,6 +50,7 @@ export interface Campaign {
   name: string;
   startDate: string;
   endDate: string;
+  description: string;
   includedCategories?: CategoryType[];
   excludedCategories?: CategoryType[];
 }
@@ -156,8 +158,7 @@ export function CampaignGrid({
                 </CardTitle>
 
                 <CardDescription className="line-clamp-3 md:line-clamp-2">
-                  Special summer promotion for selected products with exclusive
-                  discounts.
+                  {campaign.description}
                 </CardDescription>
               </div>
 
@@ -167,48 +168,49 @@ export function CampaignGrid({
                 {campaign.tags.join(", ")}
               </Badge> 
               */}
+              <div className="max-sm:hidden">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" className="h-8 w-8 p-0">
+                      <span className="sr-only">Open menu</span>
+                      <MoreVertical className="h-4 w-4" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="p-2 rounded-xs">
+                    <DropdownMenuItem
+                      onClick={() => onCopyId?.(campaign.id.toString())}
+                    >
+                      <Copy className="mr-2 h-4 w-4" />
+                      Copy Campaign ID
+                    </DropdownMenuItem>
 
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="h-8 w-8 p-0">
-                    <span className="sr-only">Open menu</span>
-                    <MoreVertical className="h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="p-2 rounded-xs">
-                  <DropdownMenuItem
-                    onClick={() => onCopyId?.(campaign.id.toString())}
-                  >
-                    <Copy className="mr-2 h-4 w-4" />
-                    Copy Campaign ID
-                  </DropdownMenuItem>
-
-                  <DropdownMenuItem
-                    onClick={() => onView?.(campaign.id.toString())}
-                  >
-                    <Eye className="h-4 w-4 mr-2" />
-                    View
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={() => onEdit?.(campaign.id.toString())}
-                  >
-                    <Pencil className="h-4 w-4 mr-2" />
-                    Edit
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Copy className="h-4 w-4 mr-2" />
-                    Duplicate
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem
-                    onClick={() => onDelete?.(campaign.id.toString())}
-                    className="text-red-500"
-                  >
-                    <Trash2 className="h-4 w-4 mr-2" />
-                    Delete
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+                    <DropdownMenuItem
+                      onClick={() => onView?.(campaign.id.toString())}
+                    >
+                      <Eye className="h-4 w-4 mr-2" />
+                      View
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => onEdit?.(campaign.id.toString())}
+                    >
+                      <Pencil className="h-4 w-4 mr-2" />
+                      Edit
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Copy className="h-4 w-4 mr-2" />
+                      Duplicate
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem
+                      onClick={() => onDelete?.(campaign.id.toString())}
+                      className="text-red-500"
+                    >
+                      <Trash2 className="h-4 w-4 mr-2" />
+                      Delete
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex flex-col space-y-1">
@@ -288,7 +290,46 @@ export function CampaignGrid({
           </Link>
 
           {/* Actions Dropdown */}
-          <div className="absolute top-2 right-2"></div>
+          <div className="hidden max-sm:flex w-full justify-between py-2 flex-wrap items-center border-t">
+            <Button
+              variant="ghost"
+              className="flex flex-col rounded-xs h-auto text-xs hidden"
+            >
+              <Copy />
+              Copy ID
+            </Button>
+
+            <Button
+              variant="ghost"
+              className="flex flex-col rounded-xs h-auto text-xs "
+            >
+              <Eye />
+              View
+            </Button>
+            <Separator orientation="vertical" className="h-8" />
+            <Button
+              variant="ghost"
+              className="flex flex-col rounded-xs h-auto text-xs "
+            >
+              <Edit />
+              Edit
+            </Button>
+            <Separator orientation="vertical" className="h-8" />
+            <Button
+              variant="ghost"
+              className="flex flex-col rounded-xs h-auto text-xs hidden"
+            >
+              <Copy />
+              Duplicate
+            </Button>
+            <Button
+              variant="ghost"
+              className="flex flex-col rounded-xs h-auto text-xs"
+            >
+              <Trash2 />
+              Delete
+            </Button>
+          </div>
         </Card>
       ))}
 

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export function CampaignWithdrawEarnings() {
   return (
-    <Card>
+    <Card className="dark:bg-background/40 shadow-none">
       <CardHeader>
         <CardTitle>Withdraw Earnings</CardTitle>
       </CardHeader>
@@ -12,7 +12,12 @@ export function CampaignWithdrawEarnings() {
           <p className="text-sm text-muted-foreground">
             Available balance: $140 USD
           </p>
-          <Button className="w-full">Withdraw</Button>
+          <Button
+            variant={"outline"}
+            className="w-full shadow-none border-0 py-6"
+          >
+            Withdraw
+          </Button>
         </div>
       </CardContent>
     </Card>

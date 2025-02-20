@@ -138,7 +138,7 @@ export function CampaignDrawer() {
                             <SelectValue placeholder="Select a category" />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent>
+                        <SelectContent className="rounded-xs">
                           <SelectItem value="branding">Branding</SelectItem>
                           <SelectItem value="awareness">Awareness</SelectItem>
                           <SelectItem value="engagement">Engagement</SelectItem>
@@ -167,7 +167,7 @@ export function CampaignDrawer() {
                               <SelectValue placeholder="Select region" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
+                          <SelectContent className="rounded-xs">
                             <SelectItem value="north">North</SelectItem>
                             <SelectItem value="south">South</SelectItem>
                             <SelectItem value="east">East</SelectItem>
@@ -194,7 +194,7 @@ export function CampaignDrawer() {
                               <SelectValue placeholder="Select language" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
+                          <SelectContent className="rounded-xs">
                             <SelectItem value="english">English</SelectItem>
                             <SelectItem value="urdu">Urdu</SelectItem>
                             <SelectItem value="punjabi">Punjabi</SelectItem>
@@ -220,7 +220,7 @@ export function CampaignDrawer() {
                               <SelectValue placeholder="Select age bracket" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
+                          <SelectContent className="rounded-xs">
                             <SelectItem value="18-24">18-24</SelectItem>
                             <SelectItem value="25-34">25-34</SelectItem>
                             <SelectItem value="35-44">35-44</SelectItem>
@@ -307,8 +307,13 @@ export function CampaignDrawer() {
                                 </FormControl>
                               </PopoverTrigger>
                               <PopoverContent
-                                className="w-auto p-0"
+                                className="w-auto p-0 rounded-xs"
                                 align="start"
+                                style={{
+                                  zIndex: 99,
+                                  position: "relative",
+                                  pointerEvents: "auto"
+                                }}
                               >
                                 <Calendar
                                   mode="single"
@@ -353,8 +358,13 @@ export function CampaignDrawer() {
                                 </FormControl>
                               </PopoverTrigger>
                               <PopoverContent
-                                className="w-auto p-0"
+                                className="w-auto p-0 rounded-xs"
                                 align="start"
+                                style={{
+                                  zIndex: 99,
+                                  position: "relative",
+                                  pointerEvents: "auto"
+                                }}
                               >
                                 <Calendar
                                   mode="single"

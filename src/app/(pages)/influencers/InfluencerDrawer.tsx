@@ -178,7 +178,7 @@ function InfluencerDrawer() {
                                 <SelectValue placeholder="Select region" />
                               </SelectTrigger>
                             </FormControl>
-                            <SelectContent>
+                            <SelectContent className="rounded-xs">
                               <SelectItem value="north">North</SelectItem>
                               <SelectItem value="south">South</SelectItem>
                               <SelectItem value="east">East</SelectItem>
@@ -207,7 +207,7 @@ function InfluencerDrawer() {
                                 <SelectValue placeholder="Select city" />
                               </SelectTrigger>
                             </FormControl>
-                            <SelectContent>
+                            <SelectContent className="rounded-xs">
                               <SelectItem value="city1">City 1</SelectItem>
                               <SelectItem value="city2">City 2</SelectItem>
                               <SelectItem value="city3">City 3</SelectItem>
@@ -241,7 +241,7 @@ function InfluencerDrawer() {
                               <SelectTrigger className="w-full">
                                 <SelectValue placeholder="Platform" />
                               </SelectTrigger>
-                              <SelectContent>
+                              <SelectContent className="rounded-xs">
                                 <SelectItem value="facebook">
                                   Facebook
                                 </SelectItem>
@@ -312,7 +312,7 @@ function InfluencerDrawer() {
                               <SelectValue placeholder="Select language" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
+                          <SelectContent className="rounded-xs">
                             <SelectItem value="english">English</SelectItem>
                             <SelectItem value="spanish">Spanish</SelectItem>
                             <SelectItem value="french">French</SelectItem>

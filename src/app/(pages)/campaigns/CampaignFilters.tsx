@@ -88,7 +88,7 @@ function CampaignFilters() {
                 <SelectValue placeholder="Select Category" />
                 <ChevronDown className="h-4 w-4 shrink-0 opacity-50" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="rounded-xs">
                 <SelectGroup>
                   <SelectLabel>Category</SelectLabel>
                   <SelectItem value="category1">Category 1</SelectItem>
@@ -106,7 +106,7 @@ function CampaignFilters() {
                 <SelectValue placeholder="Select Region" />
                 <ChevronDown className="h-4 w-4 shrink-0 opacity-50" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="rounded-xs">
                 <SelectGroup>
                   <SelectLabel>Region</SelectLabel>
                   <SelectItem value="north">North</SelectItem>
@@ -181,7 +181,7 @@ function CampaignFilters() {
                 <SelectValue placeholder="Select Language" />
                 <ChevronDown className="h-4 w-4 shrink-0 opacity-50" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="rounded-xs">
                 <SelectGroup>
                   <SelectLabel>Language</SelectLabel>
                   <SelectItem value="en">English</SelectItem>
@@ -198,7 +198,7 @@ function CampaignFilters() {
                 <SelectValue placeholder="Select Age Range" />
                 <ChevronDown className="h-4 w-4 shrink-0 opacity-50" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="rounded-xs">
                 <SelectGroup>
                   <SelectLabel>Age</SelectLabel>
                   <SelectItem value="en">18 - 24</SelectItem>
@@ -215,7 +215,7 @@ function CampaignFilters() {
                 <SelectValue placeholder="Select Budget" />
                 <ChevronDown className="h-4 w-4 shrink-0 opacity-50" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="rounded-xs">
                 <SelectGroup>
                   <SelectLabel>Budget</SelectLabel>
                   <SelectItem value="10">10K - 30K</SelectItem>

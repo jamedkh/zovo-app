@@ -30,6 +30,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { Separator } from "@/components/ui/separator";
 
 interface Campaign {
   category: "Projects" | "Internal" | "Reminder";
@@ -79,10 +80,13 @@ export function CampaignList({ data }: CampaignListProps) {
         {visibleData.map((campaign, index) => (
           <div
             key={index}
-            className="p-4 rounded-xs flex items-center justify-between bg-white dark:bg-card/40 dark:hover:bg-card/60 hover:bg-accent/5 border shadow-none transition-colors relative"
+            className="p-4 rounded-xs flex items-center justify-between bg-white dark:bg-card/40 dark:hover:bg-card/60 hover:bg-accent/5 border shadow-none transition-colors relative max-sm:flex-col max-sm:gap-6"
           >
             <div>
-              <Link href={`/campaigns/${campaign.id}`} className="group">
+              <Link
+                href={`/campaigns/${campaign.id}`}
+                className="max-sm:flex max-sm:flex-col max-sm:items-center max-sm:gap-4 group"
+              >
                 <div className="flex">
                   <h3 className="font-semibold text-lg">{campaign.name}</h3>{" "}
                   <Badge
@@ -103,7 +107,7 @@ export function CampaignList({ data }: CampaignListProps) {
               </Link>
             </div>
 
-            <div className="flex items-center md:justify-end gap-4">
+            <div className="flex items-center md:justify-end gap-4 max-sm:flex-col">
               <div className="flex space-x-2">
                 <Badge
                   variant="outline"
@@ -142,40 +146,83 @@ export function CampaignList({ data }: CampaignListProps) {
                 </TooltipProvider>
               </div>
 
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-8 w-8 text-muted-foreground"
-                  >
-                    <MoreVertical className="h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="rounded-xs p-2">
-                  <DropdownMenuItem>
-                    <Copy className="mr-2 h-4 w-4" />
-                    Copy ID
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Eye className="mr-2 h-4 w-4" />
-                    View
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Edit className="mr-2 h-4 w-4" />
-                    Edit
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Copy className="mr-2 h-4 w-4" />
-                    Duplicate
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem className="text-destructive">
-                    <Trash2 className="mr-2 h-4 w-4" />
-                    Delete
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <div className="max-sm:hidden">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-8 w-8 text-muted-foreground"
+                    >
+                      <MoreVertical className="h-4 w-4" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="rounded-xs p-2">
+                    <DropdownMenuItem>
+                      <Copy className="mr-2 h-4 w-4" />
+                      Copy ID
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Eye className="mr-2 h-4 w-4" />
+                      View
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Edit className="mr-2 h-4 w-4" />
+                      Edit
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Copy className="mr-2 h-4 w-4" />
+                      Duplicate
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem className="text-destructive">
+                      <Trash2 className="mr-2 h-4 w-4" />
+                      Delete
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+            </div>
+
+            <div className="hidden max-sm:flex w-full justify-between pt-2 flex-wrap items-center border-t">
+              <Button
+                variant="ghost"
+                className="flex flex-col rounded-xs h-auto text-xs hidden"
+              >
+                <Copy />
+                Copy ID
+              </Button>
+
+              <Button
+                variant="ghost"
+                className="flex flex-col rounded-xs h-auto text-xs "
+              >
+                <Eye />
+                View
+              </Button>
+              <Separator orientation="vertical" className="h-8" />
+              <Button
+                variant="ghost"
+                className="flex flex-col rounded-xs h-auto text-xs "
+              >
+                <Edit />
+                Edit
+              </Button>
+              <Separator orientation="vertical" className="h-8" />
+              <Button
+                variant="ghost"
+                className="flex flex-col rounded-xs h-auto text-xs hidden"
+              >
+                <Copy />
+                Duplicate
+              </Button>
+              <Button
+                variant="ghost"
+                className="flex flex-col rounded-xs h-auto text-xs"
+              >
+                <Trash2 />
+                Delete
+              </Button>
             </div>
           </div>
         ))}
@@ -183,11 +230,8 @@ export function CampaignList({ data }: CampaignListProps) {
 
       {hasMore && (
         <div className="text-center mt-4">
-          <Button
-            onClick={loadMore}
-            className="bg-orange-500 text-white px-4 py-2 rounded-lg"
-          >
-            ✨ Load More
+          <Button onClick={loadMore} variant="outline">
+            Load More
           </Button>
         </div>
       )}
