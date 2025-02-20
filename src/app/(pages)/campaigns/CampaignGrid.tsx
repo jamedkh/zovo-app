@@ -49,10 +49,18 @@ export interface Campaign {
   name: string;
   startDate: string;
   endDate: string;
+  includedCategories?: CategoryType[];
+  excludedCategories?: CategoryType[];
+}
+
+// Add CategoryType interface
+interface CategoryType {
+  id: string;
+  name: string;
 }
 
 // Rename the constant arrays to avoid naming conflicts
-const DEFAULT_INCLUDED_CATEGORIES = [
+const DEFAULT_INCLUDED_CATEGORIES: CategoryType[] = [
   { id: "1", name: "Electronics" },
   { id: "2", name: "Fashion" },
   { id: "3", name: "Home & Garden" },
@@ -64,7 +72,7 @@ const DEFAULT_INCLUDED_CATEGORIES = [
   { id: "12", name: "Winter Wear" }
 ];
 
-const DEFAULT_EXCLUDED_CATEGORIES = [
+const DEFAULT_EXCLUDED_CATEGORIES: CategoryType[] = [
   { id: "4", name: "Food" },
   { id: "5", name: "Beverages" },
   { id: "9", name: "Toys" },
@@ -80,8 +88,8 @@ interface CampaignGridProps {
   onSelectCard: (id: number) => void;
   startDate: Date;
   endDate: Date;
-  includedCategories: Campaign[];
-  excludedCategories: Campaign[];
+  includedCategories?: CategoryType[];
+  excludedCategories?: CategoryType[];
   status?: "active" | "draft" | "completed" | "paused";
   onCopyId?: (id: string) => void;
   onView?: (id: string) => void;
@@ -222,7 +230,7 @@ export function CampaignGrid({
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {getRandomCategories(
-                    includedCategories || DEFAULT_INCLUDED_CATEGORIES,
+                    campaign.includedCategories || DEFAULT_INCLUDED_CATEGORIES,
                     3
                   ).map((category) => (
                     <Badge
@@ -242,7 +250,7 @@ export function CampaignGrid({
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {getRandomCategories(
-                    excludedCategories || DEFAULT_EXCLUDED_CATEGORIES,
+                    campaign.excludedCategories || DEFAULT_EXCLUDED_CATEGORIES,
                     3
                   ).map((category) => (
                     <Badge

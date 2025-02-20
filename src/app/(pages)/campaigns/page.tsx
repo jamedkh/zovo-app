@@ -14,16 +14,33 @@ import CampaignDrawer from "./CampaignDrawer";
 import CampaignData from "./CampaignData.json";
 import { Toggle } from "@/components/ui/toggle";
 import { LayoutGrid, List } from "lucide-react";
-import { Campaign, CampaignGrid } from "./CampaignGrid";
+import { CampaignGrid } from "./CampaignGrid";
 import { CampaignTopCharts } from "@/components/CampaignTopCharts";
 import CampaignFilters from "./CampaignFilters";
 import { CampaignList } from "./CampaignList";
+
+export interface Campaign {
+  id: number;
+  name: string;
+  description: string;
+  category: "Projects" | "Internal" | "Reminder";
+  status: "onhold" | "inprogress" | "pending" | "completed";
+  startDate: string;
+  endDate: string;
+  tags: string[];
+  img: string;
+  team: {
+    name: string;
+    initials: string;
+    avatar: string;
+  }[];
+}
 
 export default function Campaigns() {
   const [view, setView] = useState<"grid" | "list">("list");
   const [visibleCount, setVisibleCount] = useState(8);
   const [selectedCards, setSelectedCards] = useState<number[]>([]);
-  const data: Campaign[] = CampaignData;
+  const data = CampaignData as Campaign[];
 
   const visibleData = data.slice(0, visibleCount);
   const hasMore = visibleCount < data.length;
@@ -93,6 +110,10 @@ export default function Campaigns() {
           selectedCards={selectedCards}
           onSelectCard={handleSelectCard}
           loadMore={loadMore}
+          startDate={new Date()}
+          endDate={new Date()}
+          includedCategories={[]}
+          excludedCategories={[]}
         />
       ) : (
         <CampaignList data={data} />

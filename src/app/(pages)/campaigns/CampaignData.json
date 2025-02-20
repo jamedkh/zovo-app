@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Summer Fashion Collection",
+    "description": "Showcasing the latest trends and styles for the upcoming summer season.",
     "startDate": "2025-06-15",
     "endDate": "2025-06-15",
     "category": "Projects",
@@ -29,6 +30,7 @@
   {
     "id": 2,
     "name": "Fitness Challenge 2025",
+    "description": "A month-long fitness initiative to promote health and wellness among participants.",
     "startDate": "2025-07-01",
     "endDate": "2025-07-01",
     "category": "Internal",
@@ -56,6 +58,7 @@
   {
     "id": 3,
     "name": "Back to School Drive",
+    "description": " Collecting and distributing school supplies for students in need before the new academic year.",
     "startDate": "2025-08-20",
     "endDate": "2025-08-20",
     "category": "Reminder",
@@ -83,6 +86,7 @@
   {
     "id": 4,
     "name": "Holiday Special",
+    "description": "Celebrating the festive season with exclusive offers, events, and promotions.",
     "startDate": "2025-12-01",
     "endDate": "2025-12-01",
     "category": "Internal",
@@ -110,6 +114,7 @@
   {
     "id": 5,
     "name": "Tech Launch Event",
+    "description": "Unveiling cutting-edge technology and innovations to the public and industry experts.",
     "startDate": "2025-09-15",
     "endDate": "2025-09-15",
     "category": "Reminder",
@@ -137,6 +142,7 @@
   {
     "id": 6,
     "name": "Wellness Week",
+    "description": "A week dedicated to promoting mental and physical well-being through various activities and workshops.",
     "startDate": "2025-10-01",
     "endDate": "2025-10-01",
     "category": "Internal",
@@ -164,6 +170,7 @@
   {
     "id": 7,
     "name": "Sports Tournament",
+    "description": "An annual competitive event featuring various sports to encourage teamwork and fitness.",
     "startDate": "2025-08-10",
     "endDate": "2025-08-10",
     "category": "Projects",
@@ -191,6 +198,7 @@
   {
     "id": 8,
     "name": "Spring Collection Preview",
+    "description": "Early access to the latest fashion trends and designs for the spring season.",
     "startDate": "2026-03-01",
     "endDate": "2026-03-01",
     "category": "Reminder",
