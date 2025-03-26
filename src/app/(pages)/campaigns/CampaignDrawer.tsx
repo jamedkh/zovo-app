@@ -778,7 +778,7 @@ export function CampaignDrawer() {
                       key={field.id}
                       className="grid grid-cols-12 gap-4 items-end mb-3"
                     >
-                      <div className="col-span-5">
+                      <div className="lg:col-span-5 col-span-12">
                         <FormField
                           control={form.control}
                           name={`kpiMetrics.${index}.metric`}
@@ -797,7 +797,7 @@ export function CampaignDrawer() {
                         />
                       </div>
 
-                      <div className="col-span-4">
+                      <div className="lg:col-span-4 col-span-12">
                         <FormField
                           control={form.control}
                           name={`kpiMetrics.${index}.target`}
@@ -821,8 +821,8 @@ export function CampaignDrawer() {
 
                       <div
                         className={cn(
-                          "col-span-2",
-                          index === 0 ? "col-span-3" : "col-span-2"
+                          "col-span-12",
+                          index === 0 ? "lg:col-span-3" : "col-span-8"
                         )}
                       >
                         <FormField
@@ -841,7 +841,7 @@ export function CampaignDrawer() {
                       </div>
 
                       {index !== 0 && (
-                        <div className="col-span-1 text-center">
+                        <div className="lg:col-span-1 col-span-4 text-center">
                           <Button
                             type="button"
                             variant="destructive"

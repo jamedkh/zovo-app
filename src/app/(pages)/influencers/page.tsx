@@ -9,7 +9,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import InfluencerDrawer from "./InfluencerDrawer";
 // import { Separator } from "@/components/ui/separator";
 import { InDataTable } from "@/components/InDataTable";
@@ -26,6 +26,7 @@ export default function Influencers() {
   const [view, setView] = useState<"grid" | "list">("list");
   const [visibleCount, setVisibleCount] = useState(8);
   const [selectedCards, setSelectedCards] = useState<number[]>([]);
+  const [showFloatingBar, setShowFloatingBar] = useState(false);
   const data: Influencer[] = InfluencerData;
 
   const visibleData = data.slice(0, visibleCount);
@@ -40,6 +41,17 @@ export default function Influencers() {
       prev.includes(id) ? prev.filter((cardId) => cardId !== id) : [...prev, id]
     );
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show floating bar after scrolling 100px
+      const scrollPosition = window.scrollY;
+      setShowFloatingBar(scrollPosition > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <ContentLayout title="Influencers">
@@ -80,6 +92,38 @@ export default function Influencers() {
 
       {/* View Toggle */}
       <div className="flex justify-end items-center mb-4">
+        <div className="flex items-center gap-2 mr-2">
+          <InfluencerFilters />
+
+          <Toggle
+            pressed={view === "list"}
+            onPressedChange={(pressed) => setView(pressed ? "list" : "grid")}
+            aria-label="Toggle list view"
+          >
+            <List className="h-4 w-4" />
+          </Toggle>
+
+          <Toggle
+            pressed={view === "grid"}
+            onPressedChange={(pressed) => setView(pressed ? "grid" : "list")}
+            aria-label="Toggle grid view"
+          >
+            <LayoutGrid className="h-4 w-4" />
+          </Toggle>
+        </div>
+
+        <InfluencerDrawer />
+      </div>
+
+      {/* View mobile */}
+      <div
+        id="campaign-floating-bar"
+        className={`flex justify-between items-center fixed w-[90%] bottom-6 lg:hidden z-30 backdrop-blur-md bg-muted/15 left-[50%] translate-x-[-50%] rounded-lg border p-1 transition-all duration-300 ${
+          showFloatingBar
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-full"
+        }`}
+      >
         <div className="flex items-center gap-2 mr-2">
           <InfluencerFilters />
 

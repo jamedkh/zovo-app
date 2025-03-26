@@ -29,13 +29,13 @@ export function Navbar({ title }: NavbarProps) {
       style={{ backdropFilter: "blur(20px)" }}
     >
       <div className="mx-4 sm:mx-8 flex h-14 items-center">
-        <div className="flex items-center space-x-4 lg:space-x-0">
+        <div className="flex items-center space-x-4 lg:space-x-0 max-sm:w-[80%]">
           <SheetMenu />
           <SidebarToggle isOpen={isOpen} setIsOpen={toggleOpen} />
-          <Breadcrumb className="max-sm:!ml-0">
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbPage className="max-sm:overflow-hidden max-sm:text-nowrap text-ellipsis max-sm:w-4/5">
+          <Breadcrumb className="max-sm:w-[80%] max-sm:text-center">
+            <BreadcrumbList className="max-sm:w-full">
+              <BreadcrumbItem className="w-full">
+                <BreadcrumbPage className="max-sm:overflow-hidden max-sm:text-nowrap text-ellipsis max-sm:w-11/12">
                   {title}
                 </BreadcrumbPage>
               </BreadcrumbItem>
