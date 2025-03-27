@@ -51,7 +51,10 @@ export function CampaignPerformanceChart() {
           tickMargin={8}
           tickFormatter={(value) => value.slice(0, 3)}
         />
-        <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+        <ChartTooltip
+          cursor={false}
+          content={<ChartTooltipContent className="rounded-xs" />}
+        />
         <Line
           dataKey="desktop"
           type="monotone"

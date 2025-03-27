@@ -103,7 +103,7 @@ export function CampaignTopCharts() {
                       startAngle={90}
                       endAngle={-270}
                     />
-                    <Tooltip />
+                    <Tooltip wrapperClassName="rounded-xs" />
                   </PieChart>
                 </ResponsiveContainer>
               </ChartContainer>
@@ -162,7 +162,7 @@ export function CampaignTopCharts() {
                       strokeWidth={2}
                       dot={false}
                     />
-                    <Tooltip />
+                    <Tooltip wrapperClassName="rounded-xs" />
                   </LineChart>
                 </ResponsiveContainer>
               </ChartContainer>

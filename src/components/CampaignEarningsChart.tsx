@@ -23,7 +23,7 @@ export function CampaignEarningsChart() {
         <BarChart data={data}>
           <XAxis dataKey="name" />
           <YAxis />
-          <Tooltip />
+          <Tooltip wrapperClassName="rounded-xs" />
           <Bar dataKey="earnings" fill="#8884d8" />
         </BarChart>
       </ResponsiveContainer>

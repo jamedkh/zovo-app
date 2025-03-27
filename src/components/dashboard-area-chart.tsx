@@ -69,7 +69,9 @@ export function DashboardAreaChart() {
             />
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent indicator="line" />}
+              content={
+                <ChartTooltipContent indicator="line" className="rounded-xs" />
+              }
             />
             <Area
               dataKey="mobile"
