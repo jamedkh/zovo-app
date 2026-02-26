@@ -2,15 +2,6 @@
 
 A social media influencer platform built with Next.js 14, Tailwind CSS, and Shadcn.
 
-## Table of Contents
-
-- Features
-- Tech Stack
-- Admin Panel
-- Getting Started
-- Collapsible submenu
-- Extracted menu items list
-
 ## Features
 
 - Influencer profile management
